@@ -11,6 +11,15 @@ class Position
   end
 end
 
+class ElementColor
+  attr_reader :foreground, :text
+
+  def initialize(foreground_color, text_color)
+    @foreground = foreground_color
+    @text = text_color
+  end
+end
+
 class Button
   attr_reader :label, :position, :foreground_color, :is_dark_mode
 
