@@ -1,5 +1,5 @@
 def draw_button(label_text, x, y, foreground_color, is_dark_mode)
-  Button.new(label_text, x, y, foreground_color, is_dark).draw
+  Button.new(label_text, x, y, foreground_color, is_dark_mode).draw
 end
 
 class Button
@@ -15,9 +15,9 @@ class Button
 
   def draw
     if @is_dark_mode
-      paint(@label, @x, @y, foreground_color, '#111111')
+      paint(@label, @x, @y, foreground_color, text_color)
     else
-      paint(@label, @x, @y, foreground_color, '#E0E0E0')
+      paint(@label, @x, @y, foreground_color, text_color)
     end
   end
 
@@ -26,6 +26,14 @@ class Button
       @foreground_color - 10
     else
       @foreground_color + 10
+    end
+  end
+
+  def text_color
+    if @is_dark_mode
+      '#111111'
+    else
+      '#E0E0E0'
     end
   end
 
