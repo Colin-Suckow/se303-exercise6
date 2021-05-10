@@ -28,7 +28,7 @@ class ElementColor
     end
   end
 
-  def text
+  def background
     if @is_dark_mode
       '#111111'
     else
@@ -48,7 +48,7 @@ class Button
   end
 
   def draw
-    paint(@label, @position.x, @position.y, @color.foreground, @color.text)
+    paint(@label, @position.x, @position.y, @color.foreground, @color.background)
   end
 
 end
