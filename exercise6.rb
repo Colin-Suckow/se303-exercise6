@@ -14,11 +14,7 @@ class Button
   end
 
   def draw
-    if @is_dark_mode
-      paint(@label, @x, @y, foreground_color, text_color)
-    else
-      paint(@label, @x, @y, foreground_color, text_color)
-    end
+    paint(@label, @x, @y, foreground_color, text_color)
   end
 
   def foreground_color
