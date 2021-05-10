@@ -1,3 +1,4 @@
+# Ideally I would remove this function, but I don't know if I'm allowed to break the API, so here it stays
 def draw_button(label_text, x, y, foreground_color, is_dark_mode)
   Button.new(label_text, Position.new(x, y), ElementColor.new(foreground_color, is_dark_mode)).draw
 end
