@@ -1,20 +1,28 @@
 def draw_button(label_text, x, y, foreground_color, is_dark_mode)
-  Button.new(label_text, x, y, foreground_color, is_dark_mode).draw
+  Button.new(label_text, position.new(x, y), foreground_color, is_dark_mode).draw
+end
+
+class Position
+  attr_reader :x, :y
+
+  def initialize(x, y)
+    @x = x
+    @y = y
+  end
 end
 
 class Button
-  attr_reader :label, :x, :y, :foreground_color, :is_dark_mode
+  attr_reader :label, :position, :foreground_color, :is_dark_mode
 
-  def initialize(label, x, y, foreground_color, is_dark_mode)
+  def initialize(label, position, foreground_color, is_dark_mode)
     @label = label
-    @x = x
-    @y = y
+    @position = position
     @foreground_color = foreground_color
     @is_dark_mode = is_dark_mode
   end
 
   def draw
-    paint(@label, @x, @y, foreground_color, text_color)
+    paint(@label, @position.x, @position.y, foreground_color, text_color)
   end
 
   def foreground_color
